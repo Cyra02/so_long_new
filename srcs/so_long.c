@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ciestrad <ciestrad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alfombra <alfombra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 11:36:14 by ciestrad          #+#    #+#             */
-/*   Updated: 2024/04/10 17:43:52 by ciestrad         ###   ########.fr       */
+/*   Updated: 2024/04/10 20:54:45 by alfombra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 #include "ft_printf.h"
 #include "mlx.h"
-#include "get_next_line.h"
+#include "so_long.h"
 
 void	*ft_memset(void *b, int c, size_t len)
 {
@@ -48,6 +48,7 @@ int	main(int argc, char **argv)
 {
 	t_complete	game;
 
+	
 	if (argc != 2)
 		return (0);
 	if (!ft_strchr(argv[1], '.ber'))

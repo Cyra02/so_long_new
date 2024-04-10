@@ -3,17 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ciestrad <ciestrad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alfombra <alfombra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 16:45:21 by ciestrad          #+#    #+#             */
-/*   Updated: 2024/04/10 17:40:15 by ciestrad         ###   ########.fr       */
+/*   Updated: 2024/04/10 20:36:06 by alfombra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 #include <stdio.h>
-#include "get_next_line.h"
-
+#include <stdlib.h>
 
 static size_t	num_words(const char *s, char c)
 {

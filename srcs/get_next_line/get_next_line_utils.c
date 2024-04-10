@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ciestrad <ciestrad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alfombra <alfombra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 11:53:29 by ciestrad          #+#    #+#             */
-/*   Updated: 2023/11/27 16:13:00 by ciestrad         ###   ########.fr       */
+/*   Updated: 2024/04/10 20:28:11 by alfombra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "so_long.h"
+#include <stdlib.h>
 
 size_t	ft_strlen(const char *str)
 {

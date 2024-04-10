@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ciestrad <ciestrad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alfombra <alfombra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 11:23:14 by ciestrad          #+#    #+#             */
-/*   Updated: 2023/11/28 12:07:04 by ciestrad         ###   ########.fr       */
+/*   Updated: 2024/04/10 20:26:14 by alfombra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "ft_printf.h"
+#include "so_long.h"
 #include <stdio.h>
 
 char	*ft_get_line(int fd, char *b)
