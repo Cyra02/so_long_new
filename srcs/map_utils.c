@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   map_utils.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ciestrad <ciestrad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alfombra <alfombra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 11:14:54 by ciestrad          #+#    #+#             */
-/*   Updated: 2024/04/10 17:42:53 by ciestrad         ###   ########.fr       */
+/*   Updated: 2024/04/10 20:27:45 by alfombra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-#include "get_next_line.h"
+#include <stdlib.h>
 
 
 static int	check_width(char *matriz)

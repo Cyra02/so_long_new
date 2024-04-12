@@ -1,7 +1,7 @@
 NAME = so_long
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -I includes/
-MLXFLAGS = -framework OpenGL -framework AppKit -g3
+CFLAGS = -Wall -Wextra -Werror
+MLXFLAGS = -L . -lmlx -framework OpenGL -framework AppKit
 
 FILES = srcs/errors \
 		srcs/ft_calloc \
@@ -21,21 +21,35 @@ OBJS = $(addsuffix .o,$(FILES))
 all: $(NAME)
 
 .c.o: $(SRCS)
-	$(CC) $(CFLAGS) -c $^ -o $@
+	@$(CC) -I includes/ $(CFLAGS) -c $^ -o $@ >/dev/null
 
 $(NAME):  $(OBJS)
-	@make -C srcs/minilibx
-	@make -C srcs/printf
-	mv srcs/printf/libftprintf.a libftprintf.a
-	mv srcs/minilibx/libmlx.a libmlx.a
-	$(CC) $(CFLAGS) $(MLXFLAGS) $(OBJS) $^ libftprintf.a libmlx.a -o $@
+	@printf "\e[32mObjects Compiled✅\e[0m\n"
+	@printf "\e[32mCompiling minilibx and printf...⏳\e[0m\n"
+	@$(MAKE) -C srcs/minilibx >/dev/null
+	@$(MAKE) -C srcs/printf >/dev/null
+	@mv srcs/printf/libftprintf.a .
+	@mv srcs/minilibx/libmlx.a .
+	@$(CC) $(CFLAGS) $(MLXFLAGS) $^ libftprintf.a libmlx.a -o $@
+	@printf "\e[32mReady to play 🤖\e[0m\n"
+
+sanitize: #this rule adds the sanitize flag to CFLAGS
+	@printf "\e[32mAdding Sanitize to CFLAGS\e[0m\n"
+	$(eval CFLAGS += -fsanitize=address -g3)
+
+sani: sanitize all #this rule changes CFLAGS to include sanitize and then compiles the program as usual
 
 clean:
-	make clean  -C srcs/printf
-	rm -rf $(OBJS)
+	@make clean -C srcs/printf >/dev/null
+	@make clean -C srcs/minilibx >/dev/null
+	@rm -rf $(OBJS)
+	@printf "\e[31m*.o=>🗑️\e[0m\n"
 
 fclean: clean
-	rm -rf $(NAME)
+	@rm -rf $(NAME) >/dev/null
+	@rm -rf libftprintf.a >/dev/null
+	@rm -rf libmlx.a >/dev/null
+	@printf "\e[31m(so_long && libmlx.a && libftprintf.a)=>🗑️\e[0m\n"
 
 re: fclean all
 
